@@ -1274,8 +1274,7 @@ public class Scrabble extends JFrame
 			public void mousePressed(MouseEvent event)
 			{
 				Point selectedPoint = event.getPoint();
-				showCredits = false;
-				
+							
 				// Navigates through each instruction page
 				if (instrucMode)
 				{
@@ -1331,6 +1330,10 @@ public class Scrabble extends JFrame
 						playSound(2);
 					}
 					
+					
+				}
+				else if (showCredits)
+				{
 					
 				}
 				else
@@ -1647,7 +1650,9 @@ public class Scrabble extends JFrame
 			{
 				Point releasedPoint = event.getPoint();
 
-				if (!instrucMode)
+				if (showCredits)
+					showCredits = false;
+				else if (!instrucMode)
 					{
 					// Navigates through the menu button options
 					if (menuMode)
